@@ -1,0 +1,506 @@
+[
+	{
+		"name": "albedo",
+		"region": "mondstadt",
+		"element": "geo",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "alhaitham",
+		"region": "sumeru",
+		"element": "dendro",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "aloy",
+		"region": "other",
+		"element": "cryo",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "amber",
+		"region": "mondstadt",
+		"element": "pyro",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "arataki-itto",
+		"region": "liyue",
+		"element": "geo",
+		"weapon": "claymore",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "barbara",
+		"region": "mondstadt",
+		"element": "hydro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "beidou",
+		"region": "liyue",
+		"element": "electro",
+		"weapon": "claymore",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "bennett",
+		"region": "mondstadt",
+		"element": "pyro",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "candace",
+		"region": "sumeru",
+		"element": "hydro",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "chongyun",
+		"region": "liyue",
+		"element": "cryo",
+		"weapon": "claymore",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "collei",
+		"region": "sumeru",
+		"element": "dendro",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "cyno",
+		"region": "sumeru",
+		"element": "electro",
+		"weapon": "polearm",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "diluc",
+		"region": "mondstadt",
+		"element": "pyro",
+		"weapon": "claymore",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "diona",
+		"region": "mondstadt",
+		"element": "cryo",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "dori",
+		"region": "sumeru",
+		"element": "electro",
+		"weapon": "claymore",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "eula",
+		"region": "mondstadt",
+		"element": "cryo",
+		"weapon": "claymore",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "faruzan",
+		"region": "sumeru",
+		"element": "anemo",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "fischl",
+		"region": "mondstadt",
+		"element": "electro",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "ganyu",
+		"region": "liyue",
+		"element": "cryo",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "gorou",
+		"region": "inazuma",
+		"element": "geo",
+		"weapon": "bow",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "hu-tao",
+		"region": "liyue",
+		"element": "pyro",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "jean",
+		"region": "mondstadt",
+		"element": "anemo",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "kaedehara-kazuha",
+		"region": "inazuma",
+		"element": "anemo",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "kaeya",
+		"region": "mondstadt",
+		"element": "cryo",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "kamisato-ayaka",
+		"region": "inazuma",
+		"element": "cryo",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "kamisato-ayato",
+		"region": "inazuma",
+		"element": "hydro",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "keqing",
+		"region": "liyue",
+		"element": "electro",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "klee",
+		"region": "mondstadt",
+		"element": "pyro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "kujou-sara",
+		"region": "inazuma",
+		"element": "electro",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "kuki-shinobu",
+		"region": "inazuma",
+		"element": "electro",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "layla",
+		"region": "sumeru",
+		"element": "cryo",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "lisa",
+		"region": "mondstadt",
+		"element": "electro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "mona",
+		"region": "mondstadt",
+		"element": "hydro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "nahida",
+		"region": "sumeru",
+		"element": "dendro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "nilou",
+		"region": "sumeru",
+		"element": "hydro",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "ningguang",
+		"region": "liyue",
+		"element": "geo",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "noelle",
+		"region": "mondstadt",
+		"element": "geo",
+		"weapon": "claymore",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "qiqi",
+		"region": "liyue",
+		"element": "cryo",
+		"weapon": "sword",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "raiden-shogun",
+		"region": "inazuma",
+		"element": "electro",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "razor",
+		"region": "mondstadt",
+		"element": "electro",
+		"weapon": "claymore",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "rosaria",
+		"region": "mondstadt",
+		"element": "cryo",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "sangonomiya-kokomi",
+		"region": "inazuma",
+		"element": "hydro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "sayu",
+		"region": "inazuma",
+		"element": "anemo",
+		"weapon": "claymore",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "shenhe",
+		"region": "liyue",
+		"element": "cryo",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "shikanoin-heizou",
+		"region": "inazuma",
+		"element": "anemo",
+		"weapon": "catalyst",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "sucrose",
+		"region": "mondstadt",
+		"element": "anemo",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "tartaglia",
+		"region": "other",
+		"element": "hydro",
+		"weapon": "bow",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "thoma",
+		"region": "inazuma",
+		"element": "pyro",
+		"weapon": "polearm",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "tighnari",
+		"region": "sumeru",
+		"element": "dendro",
+		"weapon": "bow",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "traveler",
+		"region": "other",
+		"element": "multi",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "venti",
+		"region": "mondstadt",
+		"element": "anemo",
+		"weapon": "bow",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "wanderer",
+		"region": "sumeru",
+		"element": "anemo",
+		"weapon": "catalyst",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "xiangling",
+		"region": "liyue",
+		"element": "pyro",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "xiao",
+		"region": "liyue",
+		"element": "anemo",
+		"weapon": "polearm",
+		"gender": "male",
+		"stars": "5"
+	},
+	{
+		"name": "xingqiu",
+		"region": "liyue",
+		"element": "hydro",
+		"weapon": "sword",
+		"gender": "male",
+		"stars": "4"
+	},
+	{
+		"name": "xinyan",
+		"region": "liyue",
+		"element": "pyro",
+		"weapon": "claymore",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "yae-miko",
+		"region": "inazuma",
+		"element": "electro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "yanfei",
+		"region": "liyue",
+		"element": "pyro",
+		"weapon": "catalyst",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "yaoyao",
+		"region": "liyue",
+		"element": "dendro",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "yelan",
+		"region": "liyue",
+		"element": "hydro",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "5"
+	},
+	{
+		"name": "yoimiya",
+		"region": "inazuma",
+		"element": "pyro",
+		"weapon": "bow",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "yun-jin",
+		"region": "liyue",
+		"element": "geo",
+		"weapon": "polearm",
+		"gender": "female",
+		"stars": "4"
+	},
+	{
+		"name": "zhongli",
+		"region": "liyue",
+		"element": "geo",
+		"weapon": "polearm",
+		"gender": "male",
+		"stars": "5"
+	}
+]
