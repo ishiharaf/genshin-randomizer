@@ -4,11 +4,195 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="assets/css/reset.min.css">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script src="/assets/js/main.js"></script>
 	<title>Genshin Randomizer</title>
 </head>
 <body>
-	<header></header>
-	<main></main>
-	<footer></footer>
+	<header>
+		<article class="gender">
+			<section>
+				<input type="radio" id="traveler_male" name="traveler" checked>
+				<label for="traveler_male">
+					<img src="assets/img/side/aether.png">
+					<p>Aether</p>
+				</label>
+			</section>
+			<section>
+				<input type="radio" id="traveler_female" name="traveler">
+				<label for="traveler_female">
+					<img src="assets/img/side/lumine.png">
+					<p>Lumine</p>
+				</label>
+			</section>
+		</article>
+		<section class="toggles">
+			<a id="filter-toggle" href="#" class="icon">&#xea5b;</a>
+			<p>Filter</p>
+		</section>
+	</header>
+	<main>
+		<article class="filter-options">
+			<p>Element</p>
+			<section class="elements">
+				<section>
+					<input type="checkbox" id="anemo" data-type="element">
+					<label for="anemo">
+						<img src="assets/img/element/anemo.svg">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="cryo" data-type="element">
+					<label for="cryo">
+						<img src="assets/img/element/cryo.svg">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="dendro" data-type="element">
+					<label for="dendro">
+						<img src="assets/img/element/dendro.svg">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="electro" data-type="element">
+					<label for="electro">
+						<img src="assets/img/element/electro.svg">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="geo" data-type="element">
+					<label for="geo">
+						<img src="assets/img/element/geo.svg">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="hydro" data-type="element">
+					<label for="hydro">
+						<img src="assets/img/element/hydro.svg">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="pyro" data-type="element">
+					<label for="pyro">
+						<img src="assets/img/element/pyro.svg">
+					</label>
+				</section>
+			</section>
+
+			<p>Weapon</p>
+			<section class="weapons">
+				<section>
+					<input type="checkbox" id="bow" data-type="weapon">
+					<label for="bow">
+						<img src="assets/img/weapon/bow.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="catalyst" data-type="weapon">
+					<label for="catalyst">
+						<img src="assets/img/weapon/catalyst.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="claymore" data-type="weapon">
+					<label for="claymore">
+						<img src="assets/img/weapon/claymore.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="polearm" data-type="weapon">
+					<label for="polearm">
+						<img src="assets/img/weapon/polearm.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="sword" data-type="weapon">
+					<label for="sword">
+						<img src="assets/img/weapon/sword.png">
+					</label>
+				</section>
+			</section>
+
+			<p>Region</p>
+			<section class="regions">
+				<section>
+					<input type="checkbox" id="inazuma" data-type="region">
+					<label for="inazuma" title="Inazuma">
+						<img src="assets/img/region/inazuma.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="liyue" data-type="region">
+					<label for="liyue" title="Liyue">
+						<img src="assets/img/region/liyue.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="mondstadt" data-type="region">
+					<label for="mondstadt" title="Mondstadt">
+						<img src="assets/img/region/mondstadt.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="sumeru" data-type="region">
+					<label for="sumeru" title="Sumeru">
+						<img src="assets/img/region/sumeru.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="other" data-type="region">
+					<label for="other" title="Other">
+						<img src="assets/img/region/other.png">
+					</label>
+				</section>
+			</section>
+
+			<p>Rarity</p>
+			<section class="rarities">
+				<section>
+					<input type="checkbox" id="4" data-type="stars">
+					<label for="4">
+						<img src="assets/img/stars/4.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="5" data-type="stars">
+					<label for="5">
+						<img src="assets/img/stars/5.png">
+					</label>
+				</section>
+			</section>
+
+			<p>Gender</p>
+			<section class="genders">
+				<section>
+					<input type="checkbox" id="male" data-type="gender">
+					<label for="male">
+						<img src="assets/img/side/aether.png">
+					</label>
+				</section>
+				<section>
+					<input type="checkbox" id="female" data-type="gender">
+					<label for="female">
+						<img src="assets/img/side/lumine.png">
+					</label>
+				</section>
+			</section>
+
+			<section class="buttons">
+				<button id="filter-button">Filter</button>
+				<button id="reset-button">Reset</button>
+			</section>
+		</article>
+
+		<article class="characters">
+		</article>
+	</main>
+	<footer>
+		<!-- <nav></nav> -->
+		<!-- <h2>test</h2> -->
+		<!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Similique vero, eaque quas maiores distinctio maxime neque repudiandae voluptas aperiam aliquam laudantium ex officiis, non est iusto placeat itaque fugit ipsum!</p> -->
+	</footer>
 </body>
 </html>
