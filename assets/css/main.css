@@ -145,6 +145,10 @@ header {
 	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
 }
 
+.characters section {
+	transition: opacity 1s;
+}
+
 @media (width < 500px) {
 	.characters {
 		grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
@@ -192,4 +196,33 @@ button {
 	padding: 1rem 2rem 1.25rem 2rem;
 	border: none;
 	border-radius: 5rem;
+}
+
+/* Carousel */
+.carousel {
+	display: grid;
+	justify-items: center;
+	justify-content: center;
+	opacity: 0;
+	overflow: hidden;
+	position: relative;
+	transition:
+		grid-template-columns 1s cubic-bezier(.59,-0.05,.8,.05),
+		opacity 1s;
+}
+
+.card {
+	position: relative;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+/* images height:layla, yunjin, gorou, itto */
+.card img {
+	max-width: 20rem;
+}
+
+footer {
+	overflow: hidden;
+	transition: justify-content 3s;
 }

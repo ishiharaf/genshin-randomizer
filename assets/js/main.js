@@ -9,6 +9,13 @@ const fetchCharacters = async () => {
 	}
 }
 
+const toggleCharacters = (value) => {
+	const inputs = document.querySelectorAll(".characters input")
+	inputs.forEach(input => {
+		input.checked = value
+	})
+}
+
 const toggleTraveler = (gender) => {
 	gender = gender.substring(9)
 	const traveler = {
@@ -33,9 +40,9 @@ const toggleTraveler = (gender) => {
 const getOptions = (nodelist, value) => {
 	return [...nodelist].filter(node =>
 		node.getAttribute("data-type") == value
-	).map(node => {
-		return node.id
-	})
+	).map(node =>
+		node.id
+	)
 }
 
 const filterTraveler = (char, filter, key) => {
@@ -56,12 +63,12 @@ const filterTraveler = (char, filter, key) => {
 const filterCharacters = (characters, filter, key) => {
 	return characters.filter(char =>
 		char.name == "traveler"
-			? filterTraveler(char, filter, key)
-			:filter.includes(char[key])
+		? filterTraveler(char, filter, key)
+		:filter.includes(char[key])
 	)
 }
 
-const getCharacters = (characters, options) => {
+const findCharacters = (characters, options) => {
 	let match = characters
 	const elements = getOptions(options, "element"),
 		  weapons = getOptions(options, "weapon"),
@@ -95,11 +102,7 @@ const removeCharacters = () => {
 const addCharacters = (characters, traveler) => {
 	const container = document.querySelector(".characters")
 	characters.forEach(character => {
-		const name = (
-			character.name == "traveler"
-			? traveler
-			: character.name
-		)
+		const name = character.name == "traveler" ? traveler : character.name
 		container.innerHTML += `
 			<section>
 				<input type="checkbox" id="${name}">
@@ -115,6 +118,72 @@ const showEmptyResult = () => {
 	document.querySelector(".characters").innerHTML = `
 		<p id="empty-result">No results.</p>
 	`
+}
+
+const shuffleArray = (array) => {
+	for (let i = array.length - 1; i > 0; i--) {
+		const j = Math.floor(Math.random() * (i + 1));
+		[array[i], array[j]] = [array[j], array[i]]
+	}
+	return array
+}
+
+const getSelectedCharacters = () => {
+	const selection = document.querySelectorAll(".characters input:checked")
+	return [...selection].map(char => char.id)
+}
+
+const addCharacterCards = (characters, traveler) => {
+	const carousel = document.querySelector(".carousel")
+	characters.forEach((character, order) => {
+		const name = character == "traveler" ? traveler : character
+		carousel.innerHTML += `
+			<section class="card" style="order: ${order};">
+				<img src="assets/img/card/${name}.png">
+			</section>
+		`
+	});
+}
+
+const isEven = (number) => {
+	return number % 2 == 0
+}
+
+const carouselTest = (width) => {
+	const traveler = localStorage.getItem("traveler") ?? "aether",
+		  selection = shuffleArray(getSelectedCharacters())
+		  addCharacterCards(selection, traveler)
+
+	const carousel = document.querySelector(".carousel"),
+		  cards = carousel.querySelectorAll(".card"),
+		  cardCount = cards.length
+
+	carousel.style.opacity = "1"
+	carousel.style.gridTemplateColumns = `repeat(${cardCount}, 0rem)`
+
+	const carouselWidth = (Math.floor(carousel.clientWidth / 10))
+	// spread cards a little to fit the screen
+	setTimeout(() => {
+		const cardSpace = ((carouselWidth / 10) / cardCount) + 1
+		carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${cardSpace}rem)`
+	}, 300)
+
+	// spread card to prepare them for rolling
+	setTimeout(() => {
+		const cardSpace = (
+			cardCount > 5 && isEven(cardCount) ? 25 :
+			cardCount > 5 && !isEven(cardCount) ? 20 :
+			carouselWidth / cardCount
+		)
+		carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${cardSpace}rem)`
+	}, 300)
+}
+
+const moveCarousel = (width, gap) => {
+	const carousel = document.querySelector(".carousel")
+	const cards = carousel.querySelectorAll(".card")
+	const cardCount = cards.length
+	carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${width}rem)`
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -133,7 +202,6 @@ window.addEventListener("DOMContentLoaded", async () => {
 	options.addEventListener("click", () => {
 		const filters = document.querySelector(".filter-options")
 		const display = filters.style.display
-		console.log(filters)
 
 		if (display === "") {
 			filters.style.display = "flex"
@@ -147,7 +215,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	filter.addEventListener("click", () => {
 		const options = document.querySelectorAll(".filter-options input:checked")
 		if (options.length > 0) {
-			const results = getCharacters(characters, options)
+			const results = findCharacters(characters, options)
 
 			if (results.length > 0) {
 				removeCharacters()
@@ -165,9 +233,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	reset.addEventListener("click", () => {
 		const checked = document.querySelectorAll(".filter-options input:checked")
 		if (checked.length > 0) {
-			checked.forEach(input => {
-				input.checked = false
-			})
+			toggleCharacters(false)
 			removeCharacters()
 			addCharacters(characters, traveler)
 		}
