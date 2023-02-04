@@ -203,7 +203,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 	const start = document.querySelector("#spin-toggle")
 	start.addEventListener("click", () => {
 		const checked = document.querySelectorAll(".characters input:checked")
-		if (checked.length > 3) {
+		if (checked.length > 4) {
 			const selection = shuffleArray(getSelectedCharacters())
 			removeCharacters()
 			addCharacterCards(selection, traveler)
