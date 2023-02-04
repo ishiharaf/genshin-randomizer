@@ -200,21 +200,26 @@ button {
 
 /* Carousel */
 .carousel {
-	display: grid;
+	display: flex;
 	justify-items: center;
 	justify-content: center;
 	opacity: 0;
 	overflow: hidden;
 	position: relative;
+	height: 20rem;
+	width: inherit;
 	transition:
-		grid-template-columns 1s cubic-bezier(.59,-0.05,.8,.05),
-		opacity 1s;
+		gap 1s cubic-bezier(.59,-0.05,.8,.05),
+		opacity 2.5s;
 }
 
 .card {
-	position: relative;
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: inline-block;
 	vertical-align: middle;
+	transition: transform 250ms ease;
 }
 
 /* images height:layla, yunjin, gorou, itto */
@@ -224,5 +229,4 @@ button {
 
 footer {
 	overflow: hidden;
-	transition: justify-content 3s;
 }

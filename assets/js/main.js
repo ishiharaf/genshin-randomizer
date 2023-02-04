@@ -138,7 +138,7 @@ const addCharacterCards = (characters, traveler) => {
 	characters.forEach((character, order) => {
 		const name = character == "traveler" ? traveler : character
 		carousel.innerHTML += `
-			<section class="card" style="order: ${order};">
+			<section class="card">
 				<img src="assets/img/card/${name}.png">
 			</section>
 		`
@@ -147,6 +147,12 @@ const addCharacterCards = (characters, traveler) => {
 
 const isEven = (number) => {
 	return number % 2 == 0
+}
+
+const addCharsTest = async () => {
+	const characters = await fetchCharacters(),
+		  traveler = localStorage.getItem("traveler") ?? "aether"
+	addCharacters(characters, traveler)
 }
 
 const carouselTest = (width) => {
@@ -158,25 +164,38 @@ const carouselTest = (width) => {
 		  cards = carousel.querySelectorAll(".card"),
 		  cardCount = cards.length
 
+	removeCharacters()
+
 	carousel.style.opacity = "1"
-	carousel.style.gridTemplateColumns = `repeat(${cardCount}, 0rem)`
+	// carousel.style.gridTemplateColumns = `repeat(${cardCount}, 0rem)`
 
 	const carouselWidth = (Math.floor(carousel.clientWidth / 10))
-	// spread cards a little to fit the screen
-	setTimeout(() => {
-		const cardSpace = ((carouselWidth / 10) / cardCount) + 1
-		carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${cardSpace}rem)`
-	}, 300)
+	// // spread card to prepare them for rolling
 
-	// spread card to prepare them for rolling
 	setTimeout(() => {
 		const cardSpace = (
 			cardCount > 5 && isEven(cardCount) ? 25 :
 			cardCount > 5 && !isEven(cardCount) ? 20 :
 			carouselWidth / cardCount
 		)
-		carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${cardSpace}rem)`
-	}, 300)
+		cards.forEach((card, index) => {
+			card.style.left = `${index * cardSpace}rem`
+		})
+
+		// if (cardCount == 2) {
+		// 	cards[1].style.left = "100%"
+		// } else {
+		// }
+
+		// let counter = 0
+		// for (let i = cardCount - 1; i >= 0; i--) {
+		// 	const card = cards[i]
+		// 	card.style.order = counter
+		// 	counter++
+		// }
+	}, 2000)
+		// addCharacterCards(selection, traveler)
+		// addCharacterCards(selection, traveler)
 }
 
 const moveCarousel = (width, gap) => {
