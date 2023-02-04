@@ -138,52 +138,52 @@ const addCharacterCards = (characters, traveler) => {
 	characters.forEach((character, order) => {
 		const name = character == "traveler" ? traveler : character
 		carousel.innerHTML += `
-			<section class="card" style="order: ${order};">
+			<section class="card">
 				<img src="assets/img/card/${name}.png">
 			</section>
 		`
 	});
 }
 
-const isEven = (number) => {
-	return number % 2 == 0
+let radius
+let theta
+let selectedIndex = 0
+
+function randomInteger(min, max) {
+	let rand = min + Math.random() * (max + 1 - min);
+	return Math.floor(rand);
 }
 
-const carouselTest = (width) => {
+const moveCar = () => {
+	selectedIndex++
+	const angle = theta * selectedIndex * -1
+	const carousel = document.querySelector(".carousel")
+	carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`
+}
+
+const carouselTest = () => {
 	const traveler = localStorage.getItem("traveler") ?? "aether",
 		  selection = shuffleArray(getSelectedCharacters())
 		  addCharacterCards(selection, traveler)
 
-	const carousel = document.querySelector(".carousel"),
-		  cards = carousel.querySelectorAll(".card"),
-		  cardCount = cards.length
-
-	carousel.style.opacity = "1"
-	carousel.style.gridTemplateColumns = `repeat(${cardCount}, 0rem)`
-
-	const carouselWidth = (Math.floor(carousel.clientWidth / 10))
-	// spread cards a little to fit the screen
-	setTimeout(() => {
-		const cardSpace = ((carouselWidth / 10) / cardCount) + 1
-		carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${cardSpace}rem)`
-	}, 300)
-
-	// spread card to prepare them for rolling
-	setTimeout(() => {
-		const cardSpace = (
-			cardCount > 5 && isEven(cardCount) ? 25 :
-			cardCount > 5 && !isEven(cardCount) ? 20 :
-			carouselWidth / cardCount
-		)
-		carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${cardSpace}rem)`
-	}, 300)
-}
-
-const moveCarousel = (width, gap) => {
 	const carousel = document.querySelector(".carousel")
 	const cards = carousel.querySelectorAll(".card")
 	const cardCount = cards.length
-	carousel.style.gridTemplateColumns = `repeat(${cardCount}, ${width}rem)`
+	const carouselWidth = carousel.offsetWidth
+	radius = Math.round((carouselWidth / 2) / Math.tan(Math.PI / cardCount))
+	theta = 360 / cardCount
+	// carousel.style.opacity = "1"
+
+	removeCharacters()
+
+	cards.forEach((card, index) => {
+		const cardAngle = theta * index
+		card.style.transform = `rotateY(${cardAngle}deg) translateZ(${radius}px)`
+	})
+
+	selectedIndex++
+	const angle = theta * selectedIndex * -1
+	carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`
 }
 
 window.addEventListener("DOMContentLoaded", async () => {

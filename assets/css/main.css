@@ -199,30 +199,53 @@ button {
 }
 
 /* Carousel */
-.carousel {
-	display: grid;
-	justify-items: center;
-	justify-content: center;
-	opacity: 0;
-	overflow: hidden;
-	position: relative;
-	transition:
-		grid-template-columns 1s cubic-bezier(.59,-0.05,.8,.05),
-		opacity 1s;
-}
-
-.card {
-	position: relative;
-	display: inline-block;
-	vertical-align: middle;
-}
-
 /* images height:layla, yunjin, gorou, itto */
 .card img {
 	max-width: 20rem;
 }
 
 footer {
-	overflow: hidden;
-	transition: justify-content 3s;
+	/* overflow: hidden; */
 }
+
+.scene {
+	/* height: 20rem; */
+	/* margin: 40px 0; */
+	/* position: relative; */
+	width: 210px;
+	/* height: 140px; */
+	margin: 0 auto;
+	perspective: 1000px;
+}
+
+.carousel {
+	width: inherit;
+	height: inherit;
+	position: absolute;
+	transform: translateZ(-288px);
+	transform-style: preserve-3d;
+	transition: transform 1s;
+}
+
+.card {
+	position: absolute;
+	width: 190px;
+	height: 120px;
+	left: 10px;
+	top: 10px;
+	line-height: 116px;
+	transition: transform 1s, opacity 1s;
+	/* opacity: 0; */
+}
+
+main {
+	overflow: hidden;
+}
+
+/* .card:nth-child(1),
+.card:nth-child(2),
+.card:nth-child(3),
+.card:nth-last-child(1),
+.card:nth-last-child(2) {
+	opacity: 1;
+} */
