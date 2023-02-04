@@ -78,6 +78,8 @@ header {
 }
 
 .toggles {
+	display: flex;
+	gap: 5rem;
 	padding-top: 2.25rem;
 	padding-right: 6.5rem;
 }
@@ -200,20 +202,9 @@ button {
 
 /* Carousel */
 /* images height:layla, yunjin, gorou, itto */
-.card img {
-	max-width: 20rem;
-}
-
-footer {
-	/* overflow: hidden; */
-}
 
 .scene {
-	/* height: 20rem; */
-	/* margin: 40px 0; */
-	/* position: relative; */
 	width: 210px;
-	/* height: 140px; */
 	margin: 0 auto;
 	perspective: 1000px;
 }
@@ -222,9 +213,10 @@ footer {
 	width: inherit;
 	height: inherit;
 	position: absolute;
+	/* opacity: 0; */
 	transform: translateZ(-288px);
 	transform-style: preserve-3d;
-	transition: transform 1s;
+	transition: opacity 500ms, transform 1s;
 }
 
 .card {
@@ -234,18 +226,14 @@ footer {
 	left: 10px;
 	top: 10px;
 	line-height: 116px;
-	transition: transform 1s, opacity 1s;
-	/* opacity: 0; */
+	transition: transform 1s;
+	backface-visibility: hidden;
+}
+
+.card img {
+	max-width: 20rem;
 }
 
 main {
 	overflow: hidden;
 }
-
-/* .card:nth-child(1),
-.card:nth-child(2),
-.card:nth-child(3),
-.card:nth-last-child(1),
-.card:nth-last-child(2) {
-	opacity: 1;
-} */

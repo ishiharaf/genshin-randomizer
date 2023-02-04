@@ -1,3 +1,5 @@
+import * as carousel from "./carousel.js"
+
 const fetchCharacters = async () => {
 	try {
 		const res = await fetch("data/characters.json")
@@ -134,56 +136,15 @@ const getSelectedCharacters = () => {
 }
 
 const addCharacterCards = (characters, traveler) => {
-	const carousel = document.querySelector(".carousel")
-	characters.forEach((character, order) => {
+	const container = document.querySelector(".carousel")
+	characters.forEach((character) => {
 		const name = character == "traveler" ? traveler : character
-		carousel.innerHTML += `
+		container.innerHTML += `
 			<section class="card">
 				<img src="assets/img/card/${name}.png">
 			</section>
 		`
 	});
-}
-
-let radius
-let theta
-let selectedIndex = 0
-
-function randomInteger(min, max) {
-	let rand = min + Math.random() * (max + 1 - min);
-	return Math.floor(rand);
-}
-
-const moveCar = () => {
-	selectedIndex++
-	const angle = theta * selectedIndex * -1
-	const carousel = document.querySelector(".carousel")
-	carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`
-}
-
-const carouselTest = () => {
-	const traveler = localStorage.getItem("traveler") ?? "aether",
-		  selection = shuffleArray(getSelectedCharacters())
-		  addCharacterCards(selection, traveler)
-
-	const carousel = document.querySelector(".carousel")
-	const cards = carousel.querySelectorAll(".card")
-	const cardCount = cards.length
-	const carouselWidth = carousel.offsetWidth
-	radius = Math.round((carouselWidth / 2) / Math.tan(Math.PI / cardCount))
-	theta = 360 / cardCount
-	// carousel.style.opacity = "1"
-
-	removeCharacters()
-
-	cards.forEach((card, index) => {
-		const cardAngle = theta * index
-		card.style.transform = `rotateY(${cardAngle}deg) translateZ(${radius}px)`
-	})
-
-	selectedIndex++
-	const angle = theta * selectedIndex * -1
-	carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
@@ -236,6 +197,17 @@ window.addEventListener("DOMContentLoaded", async () => {
 			toggleCharacters(false)
 			removeCharacters()
 			addCharacters(characters, traveler)
+		}
+	})
+
+	const start = document.querySelector("#spin-toggle")
+	start.addEventListener("click", () => {
+		const checked = document.querySelectorAll(".characters input:checked")
+		if (checked.length > 3) {
+			const selection = shuffleArray(getSelectedCharacters())
+			removeCharacters()
+			addCharacterCards(selection, traveler)
+			carousel.create()
 		}
 	})
 })
