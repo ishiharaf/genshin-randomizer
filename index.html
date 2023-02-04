@@ -13,7 +13,7 @@
 	<meta name="theme-color" content="#ffffff">
 	<link rel="stylesheet" href="assets/css/reset.min.css">
 	<link rel="stylesheet" href="assets/css/main.css">
-	<script src="assets/js/main.js"></script>
+	<script src="assets/js/main.js" type="module"></script>
 	<title>Genshin Randomizer</title>
 </head>
 <body>
@@ -35,8 +35,14 @@
 			</section>
 		</article>
 		<section class="toggles">
-			<a id="filter-toggle" href="#" class="icon">&#xea5b;</a>
-			<p>Filter</p>
+			<div class="toggle">
+				<a id="spin-toggle" href="#" class="icon">&#xe984;</a>
+				<p>Spin</p>
+			</div>
+			<div class="toggle">
+				<a id="filter-toggle" href="#" class="icon">&#xea5b;</a>
+				<p>Filter</p>
+			</div>
 		</section>
 	</header>
 	<main>
