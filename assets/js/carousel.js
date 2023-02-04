@@ -14,7 +14,7 @@ const move = (time) => {
 	const winner = theta * randomInteger(1, cardCount - 1) * - 1,
 		  angle = winner * time
 
-	carousel.style.transition = `transition: transform ${time}ms ease-out;`
+	carousel.style.transition = `transform ${time}ms ease-out`
 	carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`
 }
 

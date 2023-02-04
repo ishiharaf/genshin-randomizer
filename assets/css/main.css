@@ -79,9 +79,13 @@ header {
 
 .toggles {
 	display: flex;
-	gap: 5rem;
+	gap: 1rem;
 	padding-top: 2.25rem;
 	padding-right: 6.5rem;
+}
+
+.toggles > div {
+	width: 6.5rem;
 }
 
 .toggles a:is(:hover, :focus) {
@@ -213,10 +217,9 @@ button {
 	width: inherit;
 	height: inherit;
 	position: absolute;
-	/* opacity: 0; */
 	transform: translateZ(-288px);
 	transform-style: preserve-3d;
-	transition: opacity 500ms, transform 1s;
+	transition: transform 1s;
 }
 
 .card {

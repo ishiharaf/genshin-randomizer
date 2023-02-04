@@ -159,6 +159,19 @@ window.addEventListener("DOMContentLoaded", async () => {
 		})
 	})
 
+	const select = document.querySelector("#characters-toggle")
+	select.addEventListener("click", () => {
+		const state = select.innerHTML
+
+		if (state == "\uea53") {
+			select.innerHTML = "\uea52"
+			toggleCharacters(true)
+		} else {
+			select.innerHTML = "\uea53"
+			toggleCharacters(false)
+		}
+	})
+
 	const options = document.querySelector("#filter-toggle")
 	options.addEventListener("click", () => {
 		const filters = document.querySelector(".filter-options")
@@ -208,6 +221,10 @@ window.addEventListener("DOMContentLoaded", async () => {
 			removeCharacters()
 			addCharacterCards(selection, traveler)
 			carousel.create()
+
+			setTimeout(() => {
+				carousel.move(3000)
+			}, 1250)
 		}
 	})
 })
