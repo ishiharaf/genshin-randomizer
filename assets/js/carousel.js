@@ -6,12 +6,32 @@ const randomInteger = (min, max) => {
 	return Math.floor(rand)
 }
 
+let selected = 1
+const shift = (time) => {
+	const cardCount = carousel.querySelectorAll(".card").length,
+		  radius = Math.round((carouselWidth / 2) / Math.tan(Math.PI / cardCount)),
+		  theta = 360 / cardCount
+
+	const winner = theta * selected * - 1,
+		  angle = winner * time
+
+	carousel.style.transform = `translateZ(${-radius}px) rotateY(${angle}deg)`
+}
+
 const move = (time) => {
 	const cardCount = carousel.querySelectorAll(".card").length,
 		  radius = Math.round((carouselWidth / 2) / Math.tan(Math.PI / cardCount)),
 		  theta = 360 / cardCount
 
-	const winner = theta * randomInteger(1, cardCount - 1) * - 1,
+	const cards = carousel.querySelectorAll(".card")
+	const random = randomInteger(1, cardCount - 1)
+
+	console.log(cards)
+
+	selected += random
+	console.log(selected)
+
+	const winner = theta * random * - 1,
 		  angle = winner * time
 
 	carousel.style.transition = `transform ${time}ms ease-out`
@@ -29,7 +49,7 @@ const create = () => {
 		card.style.transform = `rotateY(${cardAngle}deg) translateZ(${radius}px)`
 	})
 
-	move(1000)
+	shift(1000)
 }
 
 export { create, move }

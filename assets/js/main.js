@@ -224,7 +224,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
 			setTimeout(() => {
 				carousel.move(3000)
-			}, 1250)
+			}, 5000)
 		}
 	})
 })

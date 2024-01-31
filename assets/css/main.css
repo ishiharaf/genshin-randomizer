@@ -220,6 +220,8 @@ button {
 	transform: translateZ(-288px);
 	transform-style: preserve-3d;
 	transition: transform 1s;
+	--angle: 0;
+	--radius: 0;
 }
 
 .card {
